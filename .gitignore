@@ -1,0 +1,12 @@
+/.gradle/
+*.bat
+*.iml
+.idea
+/*/build
+/*/.cxx
+/gradle
+/build
+gradlew
+local.properties
+
+/outputAar/

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">SdkDemo</string>
+
+    <array name="power_off_time">
+        <item>Do not shut down</item>
+        <item>5 minutes</item>
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 Hour</item>
+        <item>2 Hour</item>
+        <item>4 Hour</item>
+        <item>8 Hour</item>
+        <item>24 Hour</item>
+    </array>
+
+    <string name="printer_not_found">Can\'t find your device?</string>
+    <string name="tip_turn_on_bluetooth">Please turn on bluetooth</string>
+    <string name="content_turn_on_bluetooth">Your bluetooth is not turned on and cannot serve you temporarily</string>
+    <string name="turn_on_bluetooth">turn on bluetooth</string>
+
+    <string name="tip_gps">Location Services is not turned on.</string>
+    <string name="content_gps">Please turn on location services in system settings.</string>
+    <string name="gps_positive">to turn on</string>
+
+    <string name="device">equipment</string>
+    <string name="connect_by_qrcode">Scan code to connect</string>
+    <string name="connected">connected</string>
+    <string name="connect_success">connection succeeded</string>
+    <string name="connect_failed">Connection failed, please try again</string>
+    <string name="printer_not_connected_to_connect"><Data><![CDATA[device not connected， <font color="#3D82F3">Click to connect</font>]]></Data></string>
+
+    <string name="delete">delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Sure</string>
+    <string name="request_permission">Access Request</string>
+    <string name="go_setting">go to settings</string>
+    <string name="printer_list_permission_deny">App Need location permission for bluetooth search</string>
+    <string name="printer_list_permission_set">App Need positioning permission for Bluetooth search, whether to enable positioning</string>
+    <string name="printer_list_search_empty_tips">No related devices were found.\nTry to refresh by clicking on the upper right corner</string>
+    <string name="printer_disconnect">Device is disconnected</string>
+
+    <!-- 缺省页面提示文本 -->
+    <string name="default_network_loss">The network signal is lost\nPlease check the network</string>
+    <string name="default_click_to_refresh">Click to refresh</string>
+    <string name="default_coming_soon">Coming soon, stay tuned</string>
+    <string name="default_usage_limit">The maximum number of times you can use that day has been reached\nCome back tomorrow</string>
+    <string name="default_load_empty">Empty\nNothing</string>
+    <string name="default_search_empty">Sorry, %s was not found</string>
+    <string name="default_search_empty_text">No relevant data found</string>
+
+    <string name="tip_content_lose">After connecting, it will switch to the main interface of %1$s\nThe content being edited will be lost!</string>
+    <string name="connect_confirm">confirm connection</string>
+</resources>

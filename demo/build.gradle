@@ -1,0 +1,75 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.quin.sdkdemo"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 13
+        versionName "1.1.0.3"
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+// 这一个repositories代码块是为了测试对外SDK的混淆包时，引入libs目录
+// 不加这一块，会找不到aar文件（机器原因导致的？）
+repositories {
+    flatDir{
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // sdk
+    implementation(name: 'mprinter-release', ext: 'aar')
+    implementation "com.king.zxing:zxing-lite:1.1.6-androidx"
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.google.android.material:material:1.4.0'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.2"
+
+    implementation "pub.devrel:easypermissions:3.0.0"
+    implementation "com.airbnb.android:lottie:3.4.0"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation "com.alibaba:arouter-api:1.5.0"
+    annotationProcessor "com.alibaba:arouter-compiler:1.2.2"
+
+    implementation "com.android.support:multidex:2.0.1"
+}

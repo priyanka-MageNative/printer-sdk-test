@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".printer.setting.PrinterSettingActivity">
+
+    <include layout="@layout/base_toolbar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/tv_set_paper_temporary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_clickable"
+        android:drawableEnd="@mipmap/icon_more"
+        android:padding="15dp"
+        android:text="Set paper type (temporary modification)"
+        android:textColor="@color/textColorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/tv_set_concentration_temporary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_clickable"
+        android:drawableEnd="@mipmap/icon_more"
+        android:padding="15dp"
+        android:text="Setting the print density (temporary modification)"
+        android:textColor="@color/textColorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/tv_set_speed_temporary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_clickable"
+        android:drawableEnd="@mipmap/icon_more"
+        android:padding="15dp"
+        android:text="Set the print speed (temporary modification)"
+        android:textColor="@color/textColorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/tv_set_concentration_permanent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_clickable"
+        android:drawableEnd="@mipmap/icon_more"
+        android:padding="15dp"
+        android:text="Setting Print Density (Permanent Modification)"
+        android:textColor="@color/textColorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/tv_set_speed_permanent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_clickable"
+        android:drawableEnd="@mipmap/icon_more"
+        android:padding="15dp"
+        android:text="Set print speed (permanent modification)"
+        android:textColor="@color/textColorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/tv_set_power_off_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_clickable"
+        android:drawableEnd="@mipmap/icon_more"
+        android:padding="15dp"
+        android:text="Set shutdown time"
+        android:textColor="@color/textColorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+    <TextView
+        android:id="@+id/tv_firmware_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_clickable"
+        android:drawableEnd="@mipmap/icon_more"
+        android:padding="15dp"
+        android:text="firmware update"
+        android:textColor="@color/textColorPrimary" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGray" />
+
+
+</LinearLayout>

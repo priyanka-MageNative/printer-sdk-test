@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar" />
+
+    <View
+        android:id="@+id/view_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#fff5f6f7"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/tv_notfound"
+        android:layout_width="match_parent"
+        android:layout_height="26dp"
+        android:background="@color/colorPrimaryDark"
+        android:gravity="center"
+        android:visibility="gone"
+        android:text="@string/printer_not_found"
+        android:textAlignment="center"
+        android:textColor="#3D82F3"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@id/view_divider" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_printer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#FFFFFFFF"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/v_scan"
+        app:layout_constraintTop_toBottomOf="@id/tv_notfound" />
+
+    <ViewStub
+        android:id="@+id/vs_default"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/v_scan"
+        app:layout_constraintTop_toBottomOf="@id/tv_notfound" />
+
+    <View
+        android:id="@+id/v_scan"
+        android:layout_width="match_parent"
+        android:layout_height="47dp"
+        android:background="@color/colorAccent"
+        android:visibility="gone"
+        android:elevation="0dp"
+        android:onClick="scanConnect"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:drawablePadding="5dp"
+        android:text="@string/connect_by_qrcode"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textColor="#FFFFFFFF"
+        android:textSize="17sp"
+        app:drawableStartCompat="@mipmap/device_icon_scan"
+        app:layout_constraintBottom_toBottomOf="@id/v_scan"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/v_scan" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
