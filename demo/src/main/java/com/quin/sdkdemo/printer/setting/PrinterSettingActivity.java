@@ -68,7 +68,7 @@ public class PrinterSettingActivity extends BaseActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_printer_setting);
-        initToolbar("设置");
+        initToolbar("set up");
         findViewById(R.id.tv_set_paper_temporary).setOnClickListener(this);
         findViewById(R.id.tv_set_concentration_temporary).setOnClickListener(this);
         findViewById(R.id.tv_set_speed_temporary).setOnClickListener(this);
@@ -82,10 +82,10 @@ public class PrinterSettingActivity extends BaseActivity implements View.OnClick
         if (mAlertDialog == null) {
             mAlertDialog = new AlertDialog
                     .Builder(this)
-                    .setTitle("更新提示")
-                    .setMessage("机器更新中...")
+                    .setTitle("update prompt")
+                    .setMessage("The machine is being updated...")
                     .setCancelable(false)
-                    .setNegativeButton("取消更新", (dialog, which) -> {
+                    .setNegativeButton("Cancel update", (dialog, which) -> {
                         PrinterKit.cancelUpdate();
                         ToastUtil.showToast("Cancel update");
                         dialog.dismiss();

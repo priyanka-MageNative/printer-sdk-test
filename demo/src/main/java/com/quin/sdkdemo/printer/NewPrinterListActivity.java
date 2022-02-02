@@ -193,7 +193,7 @@ public class NewPrinterListActivity extends PermissionActivity {
     }
 
     private void initToolBar() {
-        super.initToolbar("打印机");
+        super.initToolbar("printer");
         ImageButton mBtnBack = findViewById(R.id.iv_back);
         setTitle(R.string.device);
         mBtnScan = new ImageButton(this);

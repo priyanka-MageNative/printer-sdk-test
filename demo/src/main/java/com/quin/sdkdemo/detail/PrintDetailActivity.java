@@ -62,7 +62,7 @@ public class PrintDetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         if (!PrinterInfo.isConnect()) {
-            ToastUtil.showToast("请连接打印机");
+            ToastUtil.showToast("Please connect a printer");
             finish();
             return;
         } else {
@@ -76,7 +76,7 @@ public class PrintDetailActivity extends BaseActivity {
                     }
                     Log.i(TAG, "onComplete: ");
                     mLoadingDialog.dismiss();
-                    showAlertDialog("打印完毕");
+                    showAlertDialog("finished printing");
                 }
 
                 @Override
@@ -86,7 +86,7 @@ public class PrintDetailActivity extends BaseActivity {
                     }
                     Log.i(TAG, "onError: ");
                     mLoadingDialog.dismiss();
-                    showAlertDialog("打印失败");
+                    showAlertDialog("print failed");
                 }
 
                 @Override
@@ -96,7 +96,7 @@ public class PrintDetailActivity extends BaseActivity {
                     }
                     Log.i(TAG, "onCancel: ");
                     mLoadingDialog.dismiss();
-                    showAlertDialog("取消打印");
+                    showAlertDialog("Cancel printing");
                 }
             });
             mPrinterHelper.setupLabelSizeWithSeries();
@@ -120,17 +120,17 @@ public class PrintDetailActivity extends BaseActivity {
             }
         });
 
-        initToolbar("趣印科技");
+        initToolbar("Fun Printing Technology");
         mToolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.print) {
                 if (mPrintJob != null) {
                     if (PrinterInfo.isCoverOpen()) {
-                        showAlertDialog("打印机盖已打开");
+                        showAlertDialog("Printer cover is open");
                         return true;
                     }
 
                     if (!PrinterInfo.isHasPaper()) {
-                        showAlertDialog("打印机缺少耗材");
+                        showAlertDialog("Printer is missing supplies");
                         return true;
                     }
 
@@ -151,7 +151,7 @@ public class PrintDetailActivity extends BaseActivity {
 
 
         if (!PrinterInfo.isConnect()) {
-            Toast.makeText(getApplicationContext(), "请连接打印机", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Please connect a printer", Toast.LENGTH_SHORT).show();
             finish();
         } else {
             mPrintJob = PrinterKit.startJob(LABEL_WIDTH, LABEL_HEIGHT, ScaleUnit.mm, Orientation.Deg0);
@@ -199,7 +199,7 @@ public class PrintDetailActivity extends BaseActivity {
         try {
             return Integer.parseInt(countStr);
         } catch (Exception e) {
-            ToastUtil.showToast("打印份数输入无效值：" + countStr);
+            ToastUtil.showToast("Invalid value entered for number of copies：" + countStr);
             return -1;
         }
     }

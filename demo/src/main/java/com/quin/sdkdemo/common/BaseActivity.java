@@ -43,7 +43,7 @@ public class BaseActivity extends AppCompatActivity
         if (mAlertDialog == null && !isDestroyed()) {
             mAlertDialog = new AlertDialog
                     .Builder(this)
-                    .setTitle("打印机提示")
+                    .setTitle("Printer Tips")
                     .setMessage(msg)
                     .create();
         } else {
@@ -117,8 +117,8 @@ public class BaseActivity extends AppCompatActivity
         }
 
         String msg = "";
-        String pattern = "打印机%s%s";
-        String status = hasConsumable ? "识别正常" : "耗尽";
+        String pattern = "Printer %s%s";
+        String status = hasConsumable ? "Identify normal" : "run out";
         switch (type) {
             case EncryptType.CARBON:
                 // 因为可能短时间内返回加密耗材信息，所以先分开碳带和纸张的提示方式，避免覆盖之后看不到上一条数据的提示
@@ -126,11 +126,11 @@ public class BaseActivity extends AppCompatActivity
                 ToastUtil.showToast(msg);
                 break;
             case EncryptType.PAPER:
-                msg = String.format(pattern, "纸张", status);
+                msg = String.format(pattern, "paper", status);
                 showAlertDialog(msg);
                 break;
             case EncryptType.RIBBON:
-                msg = String.format(pattern, "色带", status);
+                msg = String.format(pattern, "ribbon", status);
                 break;
         }
 
@@ -149,9 +149,9 @@ public class BaseActivity extends AppCompatActivity
 //        String msg = "盖子状态：" + (isOpen ? "打开" : "关闭");
         String msg;
         if (isOpen) {
-            msg = "打印机开盖";
+            msg = "Open the cover of the printer";
         } else {
-            msg = "打印机关盖";
+            msg = "Printer cover";
         }
         showAlertDialog(msg);
         Log.i(TAG, msg);
@@ -162,9 +162,9 @@ public class BaseActivity extends AppCompatActivity
 //        String msg = "切刀状态：" + (isPress ? "按下" : "松开");
         String msg;
         if (isPress) {
-            msg = "打印机切刀被触碰";
+            msg = "The printer cutter was touched";
         } else {
-            msg = "打印机切刀松开";
+            msg = "Printer cutter released";
         }
         showAlertDialog(msg);
         Log.i(TAG, msg);
@@ -175,9 +175,9 @@ public class BaseActivity extends AppCompatActivity
 //        String msg = "高温状态：" + (highTemp ? "高温报警" : "高温解除");
         String msg;
         if (highTemp) {
-            msg = "打印机温度过高";
+            msg = "Printer temperature is too high";
         } else {
-            msg = "打印机高温解除";
+            msg = "printer overheating";
         }
         showAlertDialog(msg);
         Log.i(TAG, msg);
@@ -186,16 +186,16 @@ public class BaseActivity extends AppCompatActivity
     @Override
     public void onConsumableError(int consumableType) {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("加密耗材异常：");
+        stringBuilder.append("Encryption consumables are abnormal：");
         switch (consumableType) {
             case EncryptType.CARBON:
-                stringBuilder.append("加密碳带");
+                stringBuilder.append("Encrypted CARBON");
                 break;
             case EncryptType.PAPER:
-                stringBuilder.append("加密纸张");
+                stringBuilder.append("encrypted paper");
                 break;
             case EncryptType.RIBBON:
-                stringBuilder.append("加密色带");
+                stringBuilder.append("Encrypted Ribbon");
                 break;
         }
 
@@ -209,16 +209,16 @@ public class BaseActivity extends AppCompatActivity
         String msg = "unknown";
         switch (level) {
             case BatteryFlag.DRY_CELL:
-                msg = "干电池电量不足";
+                msg = "Insufficient dry battery";
                 break;
             case BatteryFlag.LOW_POWER_3:
-                msg = "打印机即将关机";
+                msg = "Printer is about to shut down";
                 break;
             case BatteryFlag.LOW_POWER_5:
-                msg = "打印机电量低于5%";
+                msg = "Printer battery is less than 5%";
                 break;
             case BatteryFlag.LOW_POWER_10:
-                msg = "打印机电量低于10%";
+                msg = "Printer battery is below 10%";
                 break;
         }
 
@@ -236,10 +236,10 @@ public class BaseActivity extends AppCompatActivity
 //        String msg = "纸张状态：" + (hasPaper ? "上纸" : "缺纸");
         String msg;
         if (hasPaper) {
-            msg = "打印机上纸";
+            msg = "paper on the printer";
             ToastUtil.showToast(msg);
         } else {
-            msg = "打印机缺纸";
+            msg = "The printer is out of paper";
             showAlertDialog(msg);
         }
         Log.i(TAG, msg);
@@ -247,28 +247,28 @@ public class BaseActivity extends AppCompatActivity
 
     @Override
     public void onCancel() {
-        String msg = "打印机打印取消";
+        String msg = "Printer print canceled";
         showAlertDialog(msg);
         Log.i(TAG, msg);
     }
 
     @Override
     public void onComplete() {
-        String msg = "打印完成";
+        String msg = "print completed";
         showAlertDialog(msg);
         Log.i(TAG, msg);
     }
 
     @Override
     public void onError() {
-        String msg = "打印异常";
+        String msg = "print exception";
         showAlertDialog(msg);
         Log.i(TAG, msg);
     }
 
     @Override
     public void onBluetoothConnected(String name, String mac) {
-        String msg = "打印机已连接" + ", name:" + name + ", mac:" + mac;
+        String msg = "printer is connected" + ", name:" + name + ", mac:" + mac;
 //        showAlertDialog(msg);
         ToastUtil.showToast(msg);
         Log.i(TAG, msg);

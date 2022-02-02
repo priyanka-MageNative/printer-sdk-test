@@ -241,7 +241,7 @@ public class App extends MultiDexApplication {
     public final Bluetooth.BluetoothConnectStateListener mConnectStateListener = new Bluetooth.BluetoothConnectStateListener() {
         @Override
         public void onBluetoothConnected(String name, String mac) {
-            String msg = "打印机已连接";
+            String msg = "printer is connected";
             showToast(msg);
             Log.i(TAG, msg);
             if (mTopActivity != null) {
@@ -253,7 +253,7 @@ public class App extends MultiDexApplication {
 
         @Override
         public void onBluetoothConnectionFailed() {
-            String msg = "打印机连接失败";
+            String msg = "Printer connection failed";
             showToast(msg);
             Log.i(TAG, msg);
             if (mTopActivity != null) {
@@ -265,7 +265,7 @@ public class App extends MultiDexApplication {
 
         @Override
         public void onBluetoothDisconnected(boolean isActive) {
-            String msg = "打印机断开连接, 是否手动断开？" + isActive;
+            String msg = "The printer is disconnected, manually disconnect?" + isActive;
             showToast(msg);
             Log.i(TAG, msg);
             if (mTopActivity != null) {

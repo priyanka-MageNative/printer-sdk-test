@@ -32,7 +32,7 @@ public class PrinterConcentrationSettingActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_printer_concentration_setting);
         mIsPermanent = getIntent().getBooleanExtra(EXTRA_IS_PERMANENT_SETTING, false);
-        initToolbar(mIsPermanent ? "设置打印浓度(永久修改)" : "设置打印浓度(临时修改)");
+        initToolbar(mIsPermanent ? "Set print density (permanent modification)" : "Setting the print density (temporary modification)");
         mEtConcentration = findViewById(R.id.et_concentration);
         setEditCursor();
         mEtConcentration.setOnFocusChangeListener((v, hasFocus) -> {

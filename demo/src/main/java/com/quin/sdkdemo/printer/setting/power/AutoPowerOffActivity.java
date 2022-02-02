@@ -28,7 +28,7 @@ public class AutoPowerOffActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto_power_off);
-        initToolbar("自动关机时间");
+        initToolbar("Auto-off time");
         findViewById(R.id.ll_power_off_click_area).setOnClickListener(v -> {
             showTimeSelectDialog();
         });
@@ -40,7 +40,7 @@ public class AutoPowerOffActivity extends BaseActivity {
     private void showTimeSelectDialog() {
         if (mTimeSelectedDialog == null) {
             mTimeSelectedDialog = new AlertDialog.Builder(this)
-                    .setTitle("设置关机时间")
+                    .setTitle("Set shutdown time")
                     .setItems(R.array.power_off_time, (dialog, which) -> {
                         int powerOffTime = getSelectedPowerOffTimeMinute(which);
                         if (powerOffTime != -1) {

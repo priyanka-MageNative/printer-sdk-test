@@ -38,7 +38,7 @@
         app:layout_constraintBottom_toTopOf="@id/tv_mac"
         app:layout_constraintStart_toEndOf="@id/iv_picture"
         app:layout_constraintTop_toBottomOf="@id/tv_model"
-        tools:text="已连接" />
+        tools:text="connected" />
 
     <TextView
         android:id="@+id/tv_mac"
@@ -50,7 +50,7 @@
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/iv_picture"
-        tools:text="MAC地址"/>
+        tools:text="MAC address"/>
 
     <ImageView
         android:id="@+id/iv_setting"

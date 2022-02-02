@@ -39,7 +39,7 @@ public class PrinterListAdapter extends RecyclerView.Adapter<PrinterListAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Device device = mData.get(position);
-        holder.tvName.setText("打印机名称：" + device.getName());
+        holder.tvName.setText("printer name：" + device.getName());
         holder.tvMac.setText("Mac：" + device.getMac());
         holder.itemView.setOnClickListener(v -> {
             if (mListener != null) {

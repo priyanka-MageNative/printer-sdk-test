@@ -57,23 +57,23 @@ public class PrinterDetailActivity extends BaseActivity {
         tvMac.setText(String.format("MAC: %s", PrinterInfo.getMac()));
         tvSn.setText(String.format("SN:%s", PrinterInfo.getSn()));
         tvDpi.setText(String.format("DPI: %dDPI", PrinterInfo.getDpi()));
-        tvMaxPrintWidth.setText(String.format("最大打印宽度: %dmm", PrinterInfo.getPrintMaxWidth()));
+        tvMaxPrintWidth.setText(String.format("maximum print width: %dmm", PrinterInfo.getPrintMaxWidth()));
     }
 
     @SuppressLint("DefaultLocale")
     private void loadData() {
         PrinterKit.getFirmwareVersion(s -> runOnUiThread(() -> {
             Log.i(TAG, "setData: " + PrinterInfo.getFwVersion());
-            tvFirmWareVersion.setText(String.format("固件版本号: %s", PrinterInfo.getFwVersion()));
+            tvFirmWareVersion.setText(String.format("Firmware version number: %s", PrinterInfo.getFwVersion()));
         }));
         PrinterKit.getBattery(i -> runOnUiThread(() -> tvPower.setText(String.format("剩余电量: %d%%", i))));
-        PrinterKit.getPowerOffTime(i -> runOnUiThread(() -> tvPowerOffTime.setText(String.format("自动关机时间: %s", TimeUtil.getTimeStringByMinute(i)))));
+        PrinterKit.getPowerOffTime(i -> runOnUiThread(() -> tvPowerOffTime.setText(String.format("Auto shutdown time: %s", TimeUtil.getTimeStringByMinute(i)))));
 
         getEncryptData();
     }
 
     private void initViews() {
-        initToolbar("设备管理");
+        initToolbar("Device management");
         mToolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.setting) {
                 startActivity(new Intent(PrinterDetailActivity.this, PrinterSettingActivity.class));
@@ -131,21 +131,21 @@ public class PrinterDetailActivity extends BaseActivity {
                                     @Override
                                     public void onCarbonBeltInformationResult(String s) {
                                         Log.i(TAG, "onCarbonBeltInformationResult: " + s);
-                                        runOnUiThread(() -> tvCarbonBeltSerial.setText(String.format("RFID碳带序列号: %s", s)));
+                                        runOnUiThread(() -> tvCarbonBeltSerial.setText(String.format("RFID Ribbon serial number: %s", s)));
                                         queryEncryptCount();
                                     }
 
                                     @Override
                                     public void onPaperBeltInformationResult(String s) {
                                         Log.i(TAG, "onPaperBeltInformationResult: " + s);
-                                        runOnUiThread(() -> tvPaperSerial.setText(String.format("RFID纸张序列号: %s", s)));
+                                        runOnUiThread(() -> tvPaperSerial.setText(String.format("RFID paper serial number: %s", s)));
                                         queryEncryptCount();
                                     }
 
                                     @Override
                                     public void onRibbonInformationResult(String s) {
                                         Log.i(TAG, "onRibbonInformationResult: " + s);
-                                        runOnUiThread(() -> tvRibbonSerial.setText(String.format("RFID色带序列号: %s", s)));
+                                        runOnUiThread(() -> tvRibbonSerial.setText(String.format("RFID Ribbon Serial Number: %s", s)));
                                         queryEncryptCount();
                                     }
 
@@ -173,19 +173,19 @@ public class PrinterDetailActivity extends BaseActivity {
             @Override
             public void onCarbonBeltRemainCount(int i) {
                 Log.i(TAG, "onCarbonBeltRemainCount: " + i);
-                runOnUiThread(() -> tvCarbonBeltRemainAmount.setText(String.format("碳带余量: %dmm", i)));
+                runOnUiThread(() -> tvCarbonBeltRemainAmount.setText(String.format("Ribbon allowance: %dmm", i)));
             }
 
             @Override
             public void onPaperRemainCount(int i) {
                 Log.i(TAG, "onPaperRemainCount: " + i);
-                runOnUiThread(() -> tvPaperRemainAmount.setText(String.format("纸张余量: %d(张/mm)", i)));
+                runOnUiThread(() -> tvPaperRemainAmount.setText(String.format("Paper allowance: %d(sheets/mm)", i)));
             }
 
             @Override
             public void onRibbonRemainCount(int i) {
                 Log.i(TAG, "onRibbonRemainCount: " + i);
-                runOnUiThread(() -> tvRibbonRemainAmount.setText(String.format("色带余量: %dmm", i)));
+                runOnUiThread(() -> tvRibbonRemainAmount.setText(String.format("Ribbon allowance: %dmm", i)));
             }
         });
     }

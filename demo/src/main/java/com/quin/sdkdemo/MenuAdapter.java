@@ -38,7 +38,7 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder> {
         holder.tvTitle.setText(menu.getName());
         holder.itemView.setOnClickListener(v -> {
             if (!PrinterInfo.isConnect()) {
-                ToastUtil.showToast("还没有连接打印机");
+                ToastUtil.showToast("no printer connected");
                 return;
             }
             if (mListener != null) {

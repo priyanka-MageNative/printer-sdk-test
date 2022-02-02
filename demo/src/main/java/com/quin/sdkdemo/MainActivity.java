@@ -1,5 +1,4 @@
 package com.quin.sdkdemo;
-
 import android.Manifest;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
@@ -36,7 +35,7 @@ public class MainActivity extends PermissionActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initToolbar("趣印科技");
+        initToolbar("Fun Printing Technology");
         mToolbar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.printer) {
                 //检查打开蓝牙
@@ -83,13 +82,13 @@ public class MainActivity extends PermissionActivity {
 
     private List<MenuEntity> createMenu() {
         List<MenuEntity> list = new ArrayList<>();
-        list.add(new MenuEntity("打印文本", MenuEntity.TEXT));
-        list.add(new MenuEntity("打印条码", MenuEntity.BARCODE));
-        list.add(new MenuEntity("打印二维码", MenuEntity.QR_CODE));
-        list.add(new MenuEntity("打印线条", MenuEntity.LINE));
-        list.add(new MenuEntity("打印线框", MenuEntity.LINE_FRAME));
-        list.add(new MenuEntity("打印图片", MenuEntity.PICTURE));
-        list.add(new MenuEntity("打印样张", MenuEntity.SAMPLE));
+        list.add(new MenuEntity("print text", MenuEntity.TEXT));
+        list.add(new MenuEntity("print barcode", MenuEntity.BARCODE));
+        list.add(new MenuEntity("print QR code", MenuEntity.QR_CODE));
+        list.add(new MenuEntity("print lines", MenuEntity.LINE));
+        list.add(new MenuEntity("print wireframe", MenuEntity.LINE_FRAME));
+        list.add(new MenuEntity("print pictures", MenuEntity.PICTURE));
+        list.add(new MenuEntity("print proof", MenuEntity.SAMPLE));
         return list;
     }
 
@@ -120,8 +119,8 @@ public class MainActivity extends PermissionActivity {
             } else {
                 new AlertDialog
                         .Builder(this)
-                        .setTitle("开启定位")
-                        .setMessage("Android10.0搜索蓝牙设备需要开启定位权限")
+                        .setTitle("Turn on targeting")
+                        .setMessage("Android 10.0 search for Bluetooth devices requires the location permission to be turned on")
                         .setPositiveButton("去开启", (dialog, which) -> {
                             Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
                             startActivityForResult(intent, 0x12);
